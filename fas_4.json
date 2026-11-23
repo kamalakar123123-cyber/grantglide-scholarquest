@@ -1,0 +1,67 @@
+[
+  {
+    "id": "pragati",
+    "name": "AICTE Pragati Scholarship for Girls",
+    "provider": "All India Council for Technical Education",
+    "category": "Women in STEM",
+    "amount": 50000,
+    "state": "All India",
+    "maxIncome": 800000,
+    "minGpa": 0,
+    "deadline": "2027-01-15",
+    "documents": ["Income Certificate", "Caste Certificate", "Marksheets", "Bonafide Certificate"],
+    "url": "https://www.aicte-india.org/"
+  },
+  {
+    "id": "postmatric",
+    "name": "Post-Matric Scholarship",
+    "provider": "National Scholarship Portal / State authorities",
+    "category": "Government",
+    "amount": 25000,
+    "state": "Telangana",
+    "maxIncome": 250000,
+    "minGpa": 0,
+    "deadline": "2027-02-28",
+    "documents": ["Income Certificate", "Caste Certificate", "Marksheets", "Bonafide Certificate"],
+    "url": "https://scholarships.gov.in/"
+  },
+  {
+    "id": "nsp-merit",
+    "name": "Central Sector Scheme of Scholarship",
+    "provider": "Department of Higher Education",
+    "category": "Merit-Based",
+    "amount": 12000,
+    "state": "All India",
+    "maxIncome": 450000,
+    "minGpa": 7,
+    "deadline": "2027-01-31",
+    "documents": ["Income Certificate", "Marksheets", "Bonafide Certificate"],
+    "url": "https://scholarships.gov.in/"
+  },
+  {
+    "id": "reliance",
+    "name": "Reliance Foundation Undergraduate Scholarship",
+    "provider": "Reliance Foundation",
+    "category": "Need-Based",
+    "amount": 200000,
+    "state": "All India",
+    "maxIncome": 1500000,
+    "minGpa": 0,
+    "deadline": "2027-03-15",
+    "documents": ["Income Certificate", "Marksheets", "Bonafide Certificate"],
+    "url": "https://www.reliancefoundation.org/"
+  },
+  {
+    "id": "telangana-ePASS",
+    "name": "Telangana ePASS Scholarships",
+    "provider": "Government of Telangana",
+    "category": "Government",
+    "amount": 30000,
+    "state": "Telangana",
+    "maxIncome": 250000,
+    "minGpa": 0,
+    "deadline": "2027-02-10",
+    "documents": ["Income Certificate", "Caste Certificate", "Marksheets", "Bonafide Certificate"],
+    "url": "https://telanganaepass.cgg.gov.in/"
+  }
+]

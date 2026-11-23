@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GrantGlide ScholarQuest helps students discover scholarships, check eligibility and track applications.">
+  <title>GrantGlide | ScholarQuest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#home" aria-label="GrantGlide home">
+        <span class="brand-mark">G</span><span>GrantGlide <small>ScholarQuest</small></span>
+      </a>
+      <div class="side-label">WORKSPACE</div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a href="#home" class="nav-link active" data-page="home"><span>⌂</span> Overview</a>
+        <a href="#scholarships" class="nav-link" data-page="scholarships"><span>✧</span> Find scholarships</a>
+        <a href="#documents" class="nav-link" data-page="documents"><span>▤</span> Documents</a>
+        <a href="#applications" class="nav-link" data-page="applications"><span>▣</span> My applications</a>
+        <a href="#calculator" class="nav-link" data-page="calculator"><span>₹</span> Funding calculator</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><span class="help-icon">✦</span><b>Need a little help?</b><p>Check eligibility and get your documents ready before applying.</p><a href="#guide" data-page="guide">View student guide →</a></div>
+        <div class="profile-mini"><div class="avatar" id="sideAvatar">S</div><div><b id="sideName">Student</b><small>Student account</small></div><button id="editProfileBtn" title="Edit profile">⚙</button></div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+        <div class="breadcrumb">Workspace <span>/</span> <b id="pageCrumb">Overview</b></div>
+        <div class="top-actions"><button class="language-btn" id="languageBtn">తెలుగు / EN</button><button class="notification-btn" id="notificationBtn" aria-label="Notifications">♧<i></i></button><div class="avatar small-avatar" id="topAvatar">S</div></div>
+      </header>
+
+      <section class="page active-page" id="page-home">
+        <div class="welcome-row"><div><p class="eyebrow">YOUR SCHOLARSHIP COMPANION</p><h1>Good day, <span id="welcomeName">Student</span> <span class="wave">✦</span></h1><p class="muted">Your next opportunity could be one click away.</p></div><button class="primary-btn" data-go="scholarships">Explore scholarships <span>→</span></button></div>
+        <div class="hero-banner"><div class="hero-copy"><span class="hero-tag">SMARTER WAY TO FIND SUPPORT</span><h2>Make your education<br>go further.</h2><p>Discover funding opportunities that match your profile. Stay prepared, stay on track.</p><button class="light-btn" data-go="scholarships">Find my scholarships →</button></div><div class="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="cap">🎓</div><div class="floating-note note-one">✦ Your future matters</div><div class="floating-note note-two">₹ Scholarship support</div></div></div>
+        <div class="section-heading"><div><h2>Your progress at a glance</h2><p class="muted">A quick look at your scholarship journey.</p></div><button class="text-btn" data-go="applications">View activity →</button></div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-icon purple">✧</div><span>Matched scholarships</span><strong id="statMatched">0</strong><small>Based on your profile</small></article>
+          <article class="stat-card"><div class="stat-icon green">▤</div><span>Documents ready</span><strong id="statDocs">0/4</strong><small>Keep your documents updated</small></article>
+          <article class="stat-card"><div class="stat-icon orange">◷</div><span>Saved opportunities</span><strong id="statSaved">0</strong><small>Scholarships bookmarked</small></article>
+          <article class="stat-card"><div class="stat-icon blue">▣</div><span>Applications tracked</span><strong id="statApps">0</strong><small>Across all application stages</small></article>
+        </div>
+        <div class="content-grid">
+          <div class="panel"><div class="panel-head"><div><h3>Recommended for you</h3><p class="muted">Scholarships that may fit your profile.</p></div><button class="text-btn" data-go="scholarships">See all</button></div><div id="homeRecommendations" class="recommendation-list"></div></div>
+          <div class="panel deadline-panel"><div class="panel-head"><div><h3>Deadline watch</h3><p class="muted">Keep an eye on upcoming dates.</p></div><span class="live-dot">LIVE</span></div><div id="homeDeadlines"></div><div class="tip-box"><b>Quick tip</b><p>Apply early and double-check that your certificates are valid.</p></div></div>
+        </div>
+      </section>
+
+      <section class="page" id="page-scholarships">
+        <div class="page-title-row"><div><p class="eyebrow">DISCOVER OPPORTUNITIES</p><h1>Find scholarships</h1><p class="muted">Explore funding opportunities and see which ones match your profile.</p></div><button class="primary-btn" id="openProfileBtn">Update my profile</button></div>
+        <div class="filter-bar"><label class="search-box">⌕ <input id="searchInput" type="search" placeholder="Search scholarships or providers..."></label><select id="categoryFilter"><option value="all">All categories</option><option value="Government">Government</option><option value="Merit-Based">Merit-based</option><option value="Need-Based">Need-based</option><option value="Women in STEM">Women in STEM</option></select><select id="matchFilter"><option value="all">All matches</option><option value="eligible">Eligible only</option><option value="saved">Saved only</option></select></div>
+        <div class="result-summary"><span id="resultCount">Showing scholarships</span><span class="muted">Demo dataset · Verify official details before applying</span></div>
+        <div class="scholarship-grid" id="scholarshipGrid"></div>
+      </section>
+
+      <section class="page" id="page-documents">
+        <div class="page-title-row"><div><p class="eyebrow">BE APPLICATION-READY</p><h1>Document checklist</h1><p class="muted">Keep commonly requested documents organized.</p></div><div class="progress-pill" id="docProgress">0 of 4 ready</div></div>
+        <div class="panel document-panel"><div class="panel-head"><div><h3>Your document readiness</h3><p class="muted">Tick a document when you have a valid, current copy.</p></div></div><div class="progress-track"><span id="docProgressBar"></span></div><div id="documentList"></div><div class="notice">ⓘ This checklist is a planning aid. Each scholarship may request a different set of documents.</div></div>
+      </section>
+
+      <section class="page" id="page-applications">
+        <div class="page-title-row"><div><p class="eyebrow">KEEP EVERYTHING IN ONE PLACE</p><h1>My applications</h1><p class="muted">Track the scholarships you have saved or applied for.</p></div><button class="primary-btn" data-go="scholarships">+ Add scholarship</button></div>
+        <div class="pipeline" id="applicationPipeline"></div>
+        <div class="panel"><div class="panel-head"><div><h3>Application tracker</h3><p class="muted">Change the stage as your application progresses.</p></div></div><div class="table-wrap"><table><thead><tr><th>Scholarship</th><th>Funding</th><th>Stage</th><th>Action</th></tr></thead><tbody id="applicationRows"></tbody></table></div><p class="empty-state" id="emptyApplications">No applications tracked yet. Save a scholarship and add it here.</p></div>
+      </section>
+
+      <section class="page" id="page-calculator">
+        <div class="page-title-row"><div><p class="eyebrow">PLAN YOUR EDUCATION FUNDING</p><h1>Funding calculator</h1><p class="muted">Estimate your annual funding gap and compare it with possible support.</p></div></div>
+        <div class="calculator-layout"><div class="panel calculator-form"><h3>Education cost estimate</h3><p class="muted">Enter approximate annual amounts in rupees.</p><label>Annual tuition fee <input id="tuitionInput" type="number" min="0" value="80000"></label><label>Hostel and living costs <input id="livingInput" type="number" min="0" value="50000"></label><label>Other education expenses <input id="otherInput" type="number" min="0" value="10000"></label><label>Funds already available <input id="availableInput" type="number" min="0" value="20000"></label><button class="primary-btn" id="calculateBtn">Calculate funding gap</button></div><div class="panel calculator-result"><div class="result-icon">₹</div><span class="muted">Estimated funding gap</span><strong id="fundingGap">₹1,20,000</strong><p id="fundingMessage">Enter your costs to estimate the support you may need.</p><div class="calc-breakdown"><div><span>Total estimated cost</span><b id="totalCost">₹1,40,000</b></div><div><span>Available funds</span><b id="availableFunds">₹20,000</b></div></div><small class="muted">This is an estimate, not a guarantee of scholarship funding.</small></div></div>
+      </section>
+
+      <section class="page" id="page-guide">
+        <div class="page-title-row"><div><p class="eyebrow">A SIMPLE STARTING POINT</p><h1>Student guide</h1><p class="muted">A few practical steps to make scholarship applications easier.</p></div></div>
+        <div class="guide-grid"><article class="guide-card"><span>01</span><h3>Complete your profile</h3><p>Add accurate academic and demographic details so the matching tool can compare eligibility rules.</p></article><article class="guide-card"><span>02</span><h3>Review each scheme</h3><p>Check eligibility, award amount, renewal conditions and the official application website.</p></article><article class="guide-card"><span>03</span><h3>Prepare documents</h3><p>Check certificate validity and make sure names and details are consistent across documents.</p></article><article class="guide-card"><span>04</span><h3>Apply before the deadline</h3><p>Keep a record of submission details and update your application stage in the tracker.</p></article></div>
+        <div class="notice">Scholarship rules and dates can change. GrantGlide is a student project demonstration and is not an official government portal.</div>
+      </section>
+
+      <footer class="footer">© 2026 GrantGlide ScholarQuest <span>Built to make scholarship discovery simpler.</span></footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="profileModal">
+    <div class="modal"><button class="modal-close" data-close="profileModal" aria-label="Close">×</button><p class="eyebrow">PERSONALIZE YOUR RESULTS</p><h2>Student profile</h2><p class="muted">Your details are stored only in this browser for this demo.</p>
+      <form id="profileForm" class="form-grid">
+        <label>Full name<input name="name" id="profileName" required placeholder="Enter your name"></label>
+        <label>State of domicile<select name="state" id="profileState"><option>Telangana</option><option>Andhra Pradesh</option><option>Karnataka</option><option>Maharashtra</option><option>Other</option></select></label>
+        <label>Category<select name="category" id="profileCategory"><option value="BC">BC</option><option value="SC">SC</option><option value="ST">ST</option><option value="General">General</option><option value="EWS">EWS</option><option value="OBC">OBC</option></select></label>
+        <label>Gender<select name="gender" id="profileGender"><option value="Female">Female</option><option value="Male">Male</option><option value="Other">Other</option></select></label>
+        <label>Annual family income (₹)<input name="income" id="profileIncome" type="number" min="0" value="150000" required></label>
+        <label>Degree / course<input name="degree" id="profileDegree" value="B.Tech" required></label>
+        <label>Current GPA<input name="gpa" id="profileGpa" type="number" min="0" max="10" step="0.1" value="8.5" required></label>
+        <label>Year of study<select name="year" id="profileYear"><option>1st Year</option><option>2nd Year</option><option>3rd Year</option><option>4th Year</option></select></label>
+        <div class="form-actions"><button type="button" class="secondary-btn" data-close="profileModal">Cancel</button><button class="primary-btn" type="submit">Save profile</button></div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="schemeModal"><div class="modal scheme-modal"><button class="modal-close" data-close="schemeModal">×</button><div id="schemeDetails"></div></div></div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

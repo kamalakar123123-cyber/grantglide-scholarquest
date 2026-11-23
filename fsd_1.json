@@ -1,0 +1,9 @@
+{
+  "name": "grantglide-scholarquest",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Responsive scholarship finder and application tracker college mini-project",
+  "scripts": {
+    "start": "npx serve ."
+  }
+}
